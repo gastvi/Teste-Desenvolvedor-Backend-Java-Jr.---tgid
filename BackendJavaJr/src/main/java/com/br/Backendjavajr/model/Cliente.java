@@ -11,9 +11,10 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(String cpf, double saldo) {
+	public Cliente(String cpf, double saldo, String email) {
 		this.cpf = cpf;
 		this.saldo = saldo;
+		this.email = email;
 	}
 	
 	

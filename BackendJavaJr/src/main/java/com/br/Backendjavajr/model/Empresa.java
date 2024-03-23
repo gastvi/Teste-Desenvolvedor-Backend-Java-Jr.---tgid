@@ -5,14 +5,16 @@ public class Empresa {
 	private String cnpj;
 	private double saldo;
 	private double taxadeposito;
+	private String email;
 
 	public Empresa() {
 	}
 
-	public Empresa(String cnpj, double saldo, double taxadeposito) {
+	public Empresa(String cnpj, double saldo, double taxadeposito, String email) {
 		this.cnpj = cnpj;
 		this.saldo = saldo;
 		this.taxadeposito = taxadeposito;
+		this.email = email;
 	}
 
 
@@ -44,5 +46,15 @@ public class Empresa {
 	public void setTaxadeposito(double taxadeposito) {
 		this.taxadeposito = taxadeposito;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 
 }

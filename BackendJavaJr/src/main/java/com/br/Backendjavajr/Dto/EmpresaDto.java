@@ -7,11 +7,14 @@ public class EmpresaDto {
 	private String cnpj;
 	private double saldo;
 	private double taxadeposito;
+	private String email;
+
 
 	public EmpresaDto(Empresa empresa) {
 		this.cnpj = empresa.getCnpj();
 		this.saldo = empresa.getSaldo();
 		this.taxadeposito = empresa.getTaxadeposito();
+		this.email = empresa.getEmail();
 	}
 
 	
@@ -71,12 +74,12 @@ public class EmpresaDto {
 	@Override
 	public String toString() {
 		return "Empresa criado com sucesso:[" + "(Saldo inicial: " + saldo + ")(cnpj: " + cnpj + 
-				")(taxa de deposito: " + taxadeposito + ")]";
+				")(taxa de deposito: " + taxadeposito + ")(email:" + email + ")]";
 	}
 
 	public String StatusAtuais() {
 		return "Status da empresa:[" + "(Saldo atual: " + saldo + ")(cnpj: " + cnpj + 
-				")(taxa de deposito: " + taxadeposito + ")]";
+				")(taxa de deposito: " + taxadeposito + ")(email:" + email + ")]";
 	}
 
 }

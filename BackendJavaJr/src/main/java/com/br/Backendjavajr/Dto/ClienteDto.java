@@ -11,6 +11,7 @@ public class ClienteDto {
 	public ClienteDto(Cliente cliente) {
 		this.cpf = cliente.getCpf();
 		this.saldo = cliente.getSaldo();
+		this.email = cliente.getEmail();
 	}
 
 	public String getCpf() {
@@ -40,13 +41,13 @@ public class ClienteDto {
 	@Override
 	public String toString() {
 		return "cliente criado com sucesso:[(Saldo inicial de: " + saldo + 
-				")(cpf: " + cpf + ")]";	
+				")(cpf: " + cpf + ")(email:" + email + ")]";	
 	}
 	
 
 	public String StatusAtuais() {
 		return "Status do Cliente:[(" +
 				"(Saldo atual: " + saldo + 
-				")(cpf: " + cpf + ")]";	
+				")(cpf: " + cpf + ")(email:" + email + ")]";	
 	}
 }
