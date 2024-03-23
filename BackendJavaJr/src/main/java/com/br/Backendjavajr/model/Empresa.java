@@ -4,16 +4,14 @@ public class Empresa {
 
 	private String cnpj;
 	private double saldo;
-	private double taxaSaque;
 	private double taxadeposito;
 
 	public Empresa() {
 	}
 
-	public Empresa(String cnpj, double saldo, double taxaSaque, double taxadeposito) {
+	public Empresa(String cnpj, double saldo, double taxadeposito) {
 		this.cnpj = cnpj;
 		this.saldo = saldo;
-		this.taxaSaque = taxaSaque;
 		this.taxadeposito = taxadeposito;
 	}
 
@@ -38,13 +36,6 @@ public class Empresa {
 		this.saldo = saldo;
 	}
 
-	public double getTaxaSaque() {
-		return taxaSaque;
-	}
-
-	public void setTaxaSaque(double taxaSaque) {
-		this.taxaSaque = taxaSaque;
-	}
 
 	public double getTaxadeposito() {
 		return taxadeposito;

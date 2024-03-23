@@ -61,13 +61,10 @@ public class Application implements CommandLineRunner {
 			System.out.println("digite um cnpj para a empresa");
 			if (ValidadorCnpj.isCNPJ(pegarScanner = sc1.nextLine()) == true) {
 
-				System.out.println("digite a taxa de saque dessa empresa utilizando virgula como no Exemplo: 0,02");
-				var taxasaque = sc1.nextDouble();
 				System.out.println("digite a taxa de deposito dessa empresa utilizando virgula como no Exemplo: 0,02");
 				var taxadeposito = sc1.nextDouble();
 				System.out.println("digite o saldo inical dessa empresa ");
-				empresa = new Empresa(ValidadorCnpj.imprimeCNPJ(pegarScanner), sc1.nextDouble(), taxasaque,
-						taxadeposito);
+				empresa = new Empresa(ValidadorCnpj.imprimeCNPJ(pegarScanner), sc1.nextDouble(), taxadeposito);
 				verificador = false;
 
 			} else {
@@ -91,20 +88,33 @@ public class Application implements CommandLineRunner {
 			System.out.println("digite 0 para sair");
 
 			int a = sc1.nextInt();
-
+			String continuar;
 			switch (a) {
 			case 0:
 				verificador = true;
+				
 				System.out.println("obrigado por usar meu programa");
 				break;
 			case 1:
-				System.out.println("informe um valor pra sacar da empresa");
-				break;
+				sc1.nextLine();
+				System.out.println("digite 's' pra sacar dinheiro da empresa ou digite qualquer coisa para cancelar");
+				continuar = sc1.nextLine();
+				if(continuar.equals("s")) {
+					System.out.println("informe um valor para sacar da empresa");
+					Double valorSacar = sc1.nextDouble();
+					empresaDto.ClienteSaca(clienteDto, valorSacar);
+					System.out.println(empresaDto.StatusAtuais());
+					System.out.println(clienteDto.StatusAtuais());
+					break;
+				}else{
+					System.out.println("cancelando deposito");
+					break;
+				}
 			case 2:
 				sc1.nextLine();
 				System.out.println("caso queria continuar, existe uma taxa de " + empresaDto.getTaxadeposito() +
 						" que sera pega do seu saldo total, ainda deseja continuar, digite 's' pra sim ou digite qualquer coisa para cancelar");
-				String continuar = sc1.nextLine();
+				continuar = sc1.nextLine();
 				if(continuar.equals("s")) {
 					System.out.println("informe um valor pra depositar na empresa");
 					Double valorDeposito = sc1.nextDouble();
@@ -119,8 +129,6 @@ public class Application implements CommandLineRunner {
 				
 			default:
 				System.out.println("valor invalido, por favor digite um valor valido");
-				// 43089324830
-				// 29144736000115
 			}
 
 		}

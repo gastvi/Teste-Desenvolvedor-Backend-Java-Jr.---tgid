@@ -39,14 +39,14 @@ public class ClienteDto {
 	
 	@Override
 	public String toString() {
-		return "cliente criado com sucesso. Saldo inicial de: " + saldo + 
-				" e com o cpf: " + cpf;	
+		return "cliente criado com sucesso:[(Saldo inicial de: " + saldo + 
+				")(cpf: " + cpf + ")]";	
 	}
 	
 
 	public String StatusAtuais() {
-		return "Status do Cliente." +
-				" Saldo atual: " + saldo + 
-				" cpf: " + cpf;	
+		return "Status do Cliente:[(" +
+				"(Saldo atual: " + saldo + 
+				")(cpf: " + cpf + ")]";	
 	}
 }
